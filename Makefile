@@ -1,5 +1,5 @@
-COMMIT := $(shell git rev-parse HEAD)
-IMAGE_TAG ?= ge:$(COMMIT)
+GOMODHASH := $(shell sha256sum go.mod | cut -d" " -f1)
+IMAGE_TAG ?= ge:$(GOMODHASH)
 GINKGO_CMD ?= ginkgo -v --nodes=2 teamcity
 
 all:
