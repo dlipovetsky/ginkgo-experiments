@@ -18,7 +18,7 @@ func TestExample(t *testing.T) {
 
 	var rs []Reporter
 	if strings.Contains(os.Getenv("GINKGO_REPORTERS"), "teamcity") {
-		rs = append(rs, reporters.NewTeamCityReporter(os.Stdout))
+		rs = append(rs, reporters.NewTeamCityReporter(GinkgoWriter))
 	}
 	if strings.Contains(os.Getenv("GINKGO_REPORTERS"), "junit") {
 		filename := fmt.Sprintf("junit-node-%d.xml", config.GinkgoConfig.ParallelNode)

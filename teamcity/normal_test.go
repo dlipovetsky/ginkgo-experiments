@@ -9,22 +9,22 @@ import (
 )
 
 const (
-	duration = 5 * time.Second
+	duration = 3 * time.Second
 )
 
 var _ = Describe("When running", func() {
 
 	It("should write to os.Stdout", func() {
-		util.LogFor(os.Stdout, 2*duration, "test A")
+		util.LogFor(os.Stdout, duration, "test A")
 	})
 
 	It("should write to os.Stdout, and finally fail", func() {
-		util.LogFor(os.Stdout, duration, "test C")
+		util.LogFor(os.Stdout, 2*duration, "test C")
 		Fail("this test is supposed to fail")
 	})
 
 	It("should write to os.Stderr", func() {
-		util.LogFor(os.Stdout, 2*duration, "test B")
+		util.LogFor(os.Stdout, 3*duration, "test B")
 	})
 
 })
