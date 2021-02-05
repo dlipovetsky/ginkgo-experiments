@@ -14,13 +14,13 @@ const (
 
 var _ = Describe("When running", func() {
 
+	It("should write to os.Stdout", func() {
+		util.LogFor(os.Stdout, 2*duration, "test A")
+	})
+
 	It("should write to os.Stdout, and finally fail", func() {
 		util.LogFor(os.Stdout, duration, "test C")
 		Fail("this test is supposed to fail")
-	})
-
-	It("should write to os.Stdout", func() {
-		util.LogFor(os.Stdout, 2*duration, "test A")
 	})
 
 	It("should write to os.Stderr", func() {
