@@ -27,4 +27,7 @@ var _ = Describe("When running", func() {
 		util.LogFor(os.Stdout, 3*duration, "test B")
 	})
 
+	It("should write to GinkgoWriter", func() {
+		util.LogFor(GinkgoWriter, 3*duration, "test C")
+	})
 })
