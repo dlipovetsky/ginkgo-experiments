@@ -9,7 +9,7 @@ import (
 )
 
 const (
-	duration = 3 * time.Second
+	duration = 1 * time.Second
 )
 
 var _ = Describe("When running", func() {
