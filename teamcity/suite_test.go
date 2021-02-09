@@ -37,5 +37,10 @@ func TestExample(t *testing.T) {
 	} else {
 		RunSpecsWithCustomReporters(t, "TeamCity Reporting Experiment", rs)
 	}
-
 }
+
+var _ = SynchronizedAfterSuite(func() {
+	// no-op
+}, func() {
+	// no-op
+})
